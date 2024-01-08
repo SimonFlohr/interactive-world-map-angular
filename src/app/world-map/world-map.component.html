@@ -4,14 +4,26 @@
             <div class="col-md-8 map-visual">
                 <section>
                     <div>
-                        <app-map-svg></app-map-svg>
+                        <app-map-svg (dataEmitter)="receiveCountryInfo($event)"></app-map-svg>
                     </div>
                 </section>
             </div>
             <div class="col-md-4 country-info">
                 <section>
-                    <div>
-                        Testing...
+                    <div *ngIf="!countryInfo.countryName">
+                        <h3>Interactive World Map</h3><br>
+                        <p>Hover your mouse pointer over any country to see its data.</p>
+                    </div>
+                    <div *ngIf="countryInfo.countryCapital">
+                        <h3>{{ countryInfo.countryName }}</h3>
+                        <hr>
+                        <p>
+                            <b>Capital city:</b> {{ countryInfo.countryCapital }} <br>
+                            <b>Latitude:</b>     {{ countryInfo.latitude }} <br>
+                            <b>Longitude:</b>    {{ countryInfo.longitude }} <br>
+                            <b>Region:</b>       {{ countryInfo.region }} <br>
+                            <b>Income level:</b> {{ countryInfo.incomeLevel }} <br>
+                        </p>
                     </div>
                 </section>
             </div>

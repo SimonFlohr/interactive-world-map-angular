@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './world-map.component.css'
 })
 export class WorldMapComponent {
+  countryInfo: any = {};
+
+  receiveCountryInfo(data: any) {
+    this.countryInfo = data;
+  }
 
 }
