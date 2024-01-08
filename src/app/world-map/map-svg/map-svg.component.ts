@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './map-svg.component.css'
 })
 export class MapSvgComponent {
-
+  setCountryData(event: any): string {
+    return event.target.id;
+  }
 }
